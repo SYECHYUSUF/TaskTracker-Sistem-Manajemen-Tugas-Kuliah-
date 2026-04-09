@@ -1,0 +1,38 @@
+# =========================
+# Python & FastAPI
+# =========================
+# File kompilasi Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual Environment
+# =========================
+env/
+venv/
+.env
+.venv/
+
+# =========================
+# Database Lokal
+# =========================
+# Abaikan file database SQLite agar data testing lokalmu tidak ikut terunggah
+*.db
+*.sqlite
+*.sqlite3
+tasktracker.db
+
+# =========================
+# Konfigurasi & IDE
+# =========================
+# File konfigurasi editor (VS Code, PyCharm, dll)
+.vscode/
+.idea/
+
+# =========================
+# OS Generated Files
+# =========================
+# File sampah bawaan sistem operasi (macOS / Windows)
+.DS_Store
+Thumbs.db
