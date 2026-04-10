@@ -2,7 +2,11 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./tasktracker.db")
+# Vercel's root filesystem is read-only, so we must use /tmp for SQLite if no external DB is found
+is_vercel = os.getenv("VERCEL") == "1"
+default_db_path = "sqlite:////tmp/tasktracker.db" if is_vercel else "sqlite:///./tasktracker.db"
+
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", default_db_path)
 
 # SQLAlchemy 1.4+ requires "postgresql://" instead of "postgres://"
 if SQLALCHEMY_DATABASE_URL.startswith("postgres://"):

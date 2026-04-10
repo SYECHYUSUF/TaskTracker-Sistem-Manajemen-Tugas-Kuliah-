@@ -36,3 +36,5 @@ tasktracker.db
 # File sampah bawaan sistem operasi (macOS / Windows)
 .DS_Store
 Thumbs.db
+.vercel
+.env*.local
